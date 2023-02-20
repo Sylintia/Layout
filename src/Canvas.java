@@ -17,12 +17,13 @@ public class Canvas extends JPanel implements MouseListener{
 
     }
 
-    public void X(Graphics g){
-        for (MouseListener =)
-        int posx = 50;
-        int posy = 50;
-        String X = "X";
-        g.drawString(X, posx, posy);
+    @Override
+    public void mouseClicked(MouseEvent e){
+        System.out.println("CLICK!");
+        System.out.println(e.getButton());
+        if (e.getButton() == 1){
+            if()
+        }
 
     }
 
