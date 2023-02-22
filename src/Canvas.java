@@ -7,6 +7,7 @@ public class Canvas extends JPanel implements MouseListener{
 
     String c1 = "X";
     String c2 = "O";
+
     boolean color1 = false;
 
     public Canvas(){
@@ -17,14 +18,23 @@ public class Canvas extends JPanel implements MouseListener{
 
     }
 
+    public void paintComponent(Graphics g){
+        super.paintComponent(g);
+
+        mouseClicked(g);
+    }
+
+
+
     @Override
     public void mouseClicked(MouseEvent e){
         System.out.println("CLICK!");
         System.out.println(e.getButton());
-        if (e.getButton() == 1){
-            if()
+        boolean mouseClicked;
+        if (mouseClicked = true){
+            Object g = null;
+            paint(paintComponent(Graphics g));
         }
-
     }
 
     public void O(){
