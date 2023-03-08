@@ -5,16 +5,21 @@ import java.awt.event.MouseListener;
 
 public class Canvas extends JPanel implements MouseListener{
 
-    String c1 = "X";
-    String c2 = "O";
+
+    final int SIZE = 100;
+    Color c1 = Color.red;
+    Color c2 = Color.green;
+    Window myWindow;
 
     boolean color1 = false;
 
-    public Canvas(){
+    public Canvas(Window win){
+        myWindow = win;
+        this.setBorder(BorderFactory.createLineBorder(Color.black));
 
         this.setBackground(Color.pink);
         addMouseListener((MouseListener) this);
-        this.setPreferredSize(new Dimension(300, 300));
+        this.setPreferredSize(new Dimension(SIZE,SIZE));
 
     }
 
@@ -54,12 +59,12 @@ public class Canvas extends JPanel implements MouseListener{
         System.out.println(e.getButton());
         if (e.getButton() == 1) {
 
-            if (color1) {
-                this.Set;
+            if (myWindow.isRed()) {
+                this.setBackground(c1);
             } else {
-                this.setToolTipText(c2);
+                this.setBackground(c2);
             }
-            color1 = !color1;
+            myWindow.changeRed();
         }else{
             this.setBackground(Color.blue);
         }
