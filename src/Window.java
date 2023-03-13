@@ -2,12 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Window extends JFrame {
-
     private boolean red = false;
 
     public Window() {
         this.setTitle("Fun with layouts");
         final int SIZE = 100;
+        this.setPreferredSize(new Dimension(SIZE, SIZE));
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Layout manager
@@ -21,15 +21,32 @@ public class Window extends JFrame {
         }*/
 
         //add squares
-        multiPanel.add(new Canvas());
-        multiPanel.add(new Canvas());
+        multiPanel.add(new Canvas(this));
+        multiPanel.add(new Canvas(this));
+        multiPanel.add(new Canvas(this));
+        multiPanel.add(new Canvas(this));
+        multiPanel.add(new Canvas(this));
+        multiPanel.add(new Canvas(this));
+        multiPanel.add(new Canvas(this));
+        multiPanel.add(new Canvas(this));
+        multiPanel.add(new Canvas(this));
 
         this.getContentPane().add(multiPanel);
         this.pack();
         this.setVisible(true);
     }
 
+    private Canvas lastClicked;
+
     //Get / Set
+
+    public void setLC(Canvas aCanvas){
+
+    }
+
+    public Canvas getLC(){
+        return lastClicked;
+    }
 
     public boolean isRed(){
         return red;
